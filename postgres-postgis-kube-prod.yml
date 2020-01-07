@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-postgres-postgis
+spec:
+  selector:
+    app: postgres-postgis-app
+  ports:
+  - name: postgis
+    port: 5432
+    nodePort: 5437
+    targetPort: 5432
+    protocol: TCP
+  type: NodePort 
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment 
+metadata:
+  name: postgres-postgis-dpt-prod
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: postgres-postgis-app
+    spec:
+      nodeSelector:
+        env: "master"
+      containers:
+      - name: postgres-postgis-app
+        image: dkhub.funceme.br:444/unisp/postgres-postgis
+        ports:
+        - containerPort: 5432
+          name: postgis
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgres-postgis-volume
+      volumes:
+      - name: postgres-postgis-volume
+        hostPath:
+          path: /mnt/nas/bd/postgres-postgis/
+        
+      
+
+

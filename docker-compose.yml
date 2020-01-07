@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  postgres-postgis:
+    build: .
+    restart: always
+    container_name: postgres-postgis
+    hostname: postgres-postgis
+    network_mode: "bridge"
+    ports:
+      - 5432:5432
+    volumes:
+      - ${HOME}/development/servers/postgres-postgis/data:/var/lib/postgresql/data/
