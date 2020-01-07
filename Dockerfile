@@ -1,4 +1,4 @@
-FROM  postgres:10
+FROM  postgres:9.4
 LABEL MAINTAINER="Jonas Cavalcanti <jonascavalcantineto@gmail.com> | Allan Almeida <allan.almeida@etice.ce.gov.br>"
 LABEL  app_type="bd"
 LABEL  app_state="prod_int"
@@ -15,9 +15,9 @@ RUN set -ex \
     	&& locale-gen
 
 ENV LANG="pt_BR.UTF-8"
-ENV PGSQL_VERSION="10"
-ENV POSTGIS_VERSION="3"
-ENV POSTGIS_SQL_VERSION="3.0"
+ENV PGSQL_VERSION="9.4"
+ENV POSTGIS_VERSION="2.4"
+ENV POSTGIS_SQL_VERSION="2.4.4"
 
 RUN set -ex \
 	&& wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \

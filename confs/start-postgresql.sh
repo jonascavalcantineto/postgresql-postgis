@@ -20,14 +20,14 @@ then
     #psql -U postgres -d postgres -c "CREATE EXTENSION postgis;"
     if [ $? == 0 ]
     then
-        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_SQL_VERSION}/postgis.sql
-        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_SQL_VERSION}/spatial_ref_sys.sql
-        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_SQL_VERSION}/postgis_comments.sql
-        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_SQL_VERSION}/rtpostgis.sql
-        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_SQL_VERSION}/raster_comments.sql
-        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_SQL_VERSION}/topology.sql
-        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_SQL_VERSION}/topology_comments.sql
-        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_SQL_VERSION}/legacy.sql
+        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_VERSION}/postgis.sql
+        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_VERSION}/spatial_ref_sys.sql
+        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_VERSION}/postgis_comments.sql
+        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_VERSION}/rtpostgis.sql
+        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_VERSION}/raster_comments.sql
+        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_VERSION}/topology.sql
+        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_VERSION}/topology_comments.sql
+        psql -U postgres -d template_postgis -f /usr/share/postgresql/${PGSQL_VERSION}/contrib/postgis-${POSTGIS_VERSION}/legacy.sql
     #     #-- Enable Topology
     #     psql -U postgres -d postgres -c "CREATE EXTENSION postgis_topology;"
     #     #-- Enable Template
