@@ -1,4 +1,4 @@
-# PostgreSQL Postgis ETICE
+# PostgreSQL Postgis Container
 
 ## Supported tags and respective Dockerfile links
 * pgsql10-postgis3.0.0
